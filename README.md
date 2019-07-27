@@ -1,0 +1,2 @@
+# mariadb_master_slave_quick
+利用docker快速搭建mariadb的主从复制环境
