@@ -1,0 +1,27 @@
+version: "3"
+services:
+  master_db:
+    build:
+      context: ./master
+    container_name: master
+    # image: mariadb
+    ports:
+      - "23306:3306"
+    volumes:
+      - "/var/docker/master/:/var/lib/mysql"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 
+
+  slave1_db:
+    build:
+      context: ./slave1
+    container_name: slave1
+    # image: mariadb
+    ports:
+      - "23307:3306"
+    volumes:
+      - "/var/docker/slave1/:/var/lib/mysql"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 
